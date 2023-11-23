@@ -15,7 +15,7 @@ const config: Config = {
       themes: {
         light: {
           colors: {
-            primary: "#fde68a",
+            primary: "#fbbf24",
             secondary: "#eab308",
             background: "#ffffff",
             content1: "#ffffff",
@@ -25,7 +25,7 @@ const config: Config = {
         },
         dark: {
           colors: {
-            primary: "#fde68a",
+            primary: "#fbbf24",
             secondary: "#eab308",
             background: "#0d0d0d",
             content1: "#1d1d1d",
