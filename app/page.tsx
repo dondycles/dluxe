@@ -80,16 +80,16 @@ export default function Home() {
   }, []);
   return (
     <main className="w-full h-full ">
-      <div className="w-full min-h-[calc(100%-96px)] flex flex-col gap-4 px-4 sm:px-16 md:px-32 pt-12 bg-black">
+      <div className="w-full min-h-[calc(100%-96px)] grid grid-rows-3 gap-4 px-4 sm:px-16 md:px-32  ">
         <AnimatePresence mode="wait">
           <m.div
             key={index}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="w-full flex flex-col-reverse lg:flex-row gap-4 justify-center items-center mt-0 mb-0 overflow-hidden max-w-[1000px] mx-auto "
+            className="row-span-2 w-full grid grid-cols-1 lg:grid-cols-3 gap-4  mt-0 mb-0  max-w-[1000px] mx-auto "
           >
-            <m.div className="relative max-h-[300px] lg:max-h-[500px] w-full h-screen object-cover ">
+            <m.div className="relative max-h-[300px] lg:max-h-[500px] w-full h-screen object-cover col-span-2 mb-0 mt-auto mx-auto">
               <Image
                 src={contents[index].img}
                 alt=""
@@ -97,7 +97,7 @@ export default function Home() {
                 className="object-contain object-bottom"
               />
             </m.div>
-            <m.div className="flex flex-col gap-1 max-w-[300px] mb-0 mt-auto flex-1">
+            <m.div className="flex flex-col gap-1 max-w-[300px] mb-0 mt-auto flex-1 mx-auto">
               <p className="text-3xl lg:text-5xl text-primary font-semibold">
                 {contents[index].title}
               </p>
@@ -147,8 +147,8 @@ export default function Home() {
         <br />
         <br />
         <br />
-        <div className="grid grid-cols-1 lg:grid-cols-3  mx-auto">
-          <div className="relative min-w-[400px] lg:col-span-2 ">
+        <div className="grid grid-cols-1 xl:grid-cols-3  mx-auto">
+          <div className="relative xl:col-span-2 ">
             <Image src={demo} alt="" />
           </div>
           <div className="flex flex-col gap-2 my-auto mr-auto ml-auto lg:ml-0 ">
@@ -156,7 +156,7 @@ export default function Home() {
               Introducing our Handpicked Instruments: to Diversify and Grow Your
               Portfolio
             </p>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid sm:grid-cols-3 gap-2">
               <Button
                 radius="full"
                 className="text-xs  font-semibold text-white justify-start"
@@ -185,7 +185,7 @@ export default function Home() {
               </Button>
               <Button
                 radius="full"
-                className="text-xs  font-semibold text-white justify-start"
+                className="text-xs  font-semibold text-white justify-start "
                 variant="shadow"
                 color="primary"
                 startContent={
