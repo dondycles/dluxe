@@ -26,25 +26,9 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 
 import { FaCaretDown } from "react-icons/fa";
 import { BiSolidLogInCircle } from "react-icons/bi";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from "react";
-import { AnimatePresence, motion as m } from "framer-motion";
 export default function Nav() {
-  const [openMenu, setOpenMenu] = useState(false);
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
   return (
-    <Navbar className="fixed" shouldHideOnScroll>
+    <Navbar position="sticky" shouldHideOnScroll>
       <NavbarContent className="sm:hidden pr-3" justify="start">
         <NavbarBrand className="gap-2">
           <Image src={icon} alt="D'luxe" width={32} height={32} />
@@ -109,7 +93,6 @@ export default function Nav() {
           Log In
         </Button>
       </NavbarContent>
-
       <NavbarMenu>
         <Accordion>
           <AccordionItem hideIndicator key="1" aria-label="Home" title="Home" />
