@@ -1,10 +1,10 @@
 "use client";
 import slide1 from "@/public/slide1.webp";
 import slide2 from "@/public/slide2.webp";
+import demo from "@/public/demo.webp";
 import { Button, Divider, Link } from "@nextui-org/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion as m, AnimatePresence } from "framer-motion";
 import { FaRobot, FaLightbulb, FaPen } from "react-icons/fa";
 import { MdOutlineManageAccounts } from "react-icons/md";
@@ -80,7 +80,7 @@ export default function Home() {
   }, []);
   return (
     <main className="w-full h-full ">
-      <div className="w-full min-h-[calc(100%-96px)] flex flex-col gap-4 px-4 sm:px-16 md:px-32 pt-12 ">
+      <div className="w-full min-h-[calc(100%-96px)] flex flex-col gap-4 px-4 sm:px-16 md:px-32 pt-12 bg-black">
         <AnimatePresence mode="wait">
           <m.div
             key={index}
@@ -113,7 +113,6 @@ export default function Home() {
             </m.div>
           </m.div>
         </AnimatePresence>
-
         <div className="bg-background/60 max-w-[600px] mx-auto mb-auto mt-0 h-fit w-full flex flex-row gap-4 rounded-xl shadow-md p-4">
           {projecteds.map((projected) => {
             return (
@@ -142,6 +141,141 @@ export default function Home() {
               </div>
             );
           })}
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div className="grid grid-cols-1 lg:grid-cols-3  mx-auto">
+          <div className="relative min-w-[400px] lg:col-span-2 ">
+            <Image src={demo} alt="" />
+          </div>
+          <div className="flex flex-col gap-2 my-auto mr-auto ml-auto lg:ml-0 ">
+            <p className="text-primary text-2xl font-semibold">
+              Introducing our Handpicked Instruments: to Diversify and Grow Your
+              Portfolio
+            </p>
+            <div className="grid grid-cols-3 gap-2">
+              <Button
+                radius="full"
+                className="text-xs  font-semibold text-white justify-start"
+                variant="shadow"
+                color="primary"
+                startContent={
+                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
+                    EQ
+                  </div>
+                }
+              >
+                Stocks
+              </Button>
+              <Button
+                radius="full"
+                className="text-xs  font-semibold text-white justify-start"
+                variant="shadow"
+                color="primary"
+                startContent={
+                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
+                    ET
+                  </div>
+                }
+              >
+                ETFs
+              </Button>
+              <Button
+                radius="full"
+                className="text-xs  font-semibold text-white justify-start"
+                variant="shadow"
+                color="primary"
+                startContent={
+                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
+                    CM
+                  </div>
+                }
+              >
+                Commodities
+              </Button>
+              <Button
+                radius="full"
+                className="text-xs  font-semibold text-white justify-start"
+                variant="shadow"
+                color="primary"
+                startContent={
+                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
+                    MF
+                  </div>
+                }
+              >
+                Mutual Funds
+              </Button>
+              <Button
+                radius="full"
+                className="text-xs  font-semibold text-white justify-start"
+                variant="shadow"
+                color="primary"
+                startContent={
+                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
+                    FR
+                  </div>
+                }
+              >
+                Forex
+              </Button>
+              <Button
+                radius="full"
+                className="text-xs  font-semibold text-white justify-start"
+                variant="shadow"
+                color="primary"
+                startContent={
+                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
+                    BO
+                  </div>
+                }
+              >
+                Bond
+              </Button>
+              <Button
+                radius="full"
+                className="text-xs  font-semibold text-white justify-start"
+                variant="shadow"
+                color="primary"
+                startContent={
+                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
+                    CR
+                  </div>
+                }
+              >
+                Crypto
+              </Button>
+              <Button
+                radius="full"
+                className="text-xs  font-semibold text-white justify-start"
+                variant="shadow"
+                color="primary"
+                startContent={
+                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
+                    LO
+                  </div>
+                }
+              >
+                Listed Options
+              </Button>
+              <Button
+                radius="full"
+                className="text-xs  font-semibold text-white justify-start"
+                variant="shadow"
+                color="primary"
+                startContent={
+                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
+                    FU
+                  </div>
+                }
+              >
+                Futures
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
       <footer className="bg-background/75 py-16 flex flex-col w-full px-4 sm:px-16 md:px-32 gap-8">
