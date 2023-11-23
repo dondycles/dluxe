@@ -28,7 +28,7 @@ import { FaCaretDown } from "react-icons/fa";
 import { BiSolidLogInCircle } from "react-icons/bi";
 export default function Nav() {
   return (
-    <Navbar position="sticky" shouldHideOnScroll>
+    <Navbar shouldHideOnScroll={true}>
       <NavbarContent className="sm:hidden pr-3" justify="start">
         <NavbarBrand className="gap-2">
           <Image src={icon} alt="D'luxe" width={32} height={32} />

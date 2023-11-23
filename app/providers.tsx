@@ -6,7 +6,7 @@ import { NextUIProvider } from "@nextui-org/react";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <NextUIProvider className="max-h-[100dvh] h-screen w-full  text-foreground light text-xs sm:text-sm bg-gradient-to-b from-background to-primary/25 bg-background overflow-x-hidden overflow-y-auto flex flex-col">
+    <NextUIProvider className="max-h-[100dvh] h-screen w-full  text-foreground light text-xs sm:text-sm bg-gradient-to-b from-background to-primary/25 bg-background flex flex-col">
       <Nav />
       {children}
     </NextUIProvider>

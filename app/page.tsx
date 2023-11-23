@@ -89,14 +89,14 @@ export default function Home() {
             exit={{ opacity: 0 }}
             className="w-full flex flex-col-reverse lg:flex-row gap-4 justify-center items-center mt-auto mb-0 overflow-hidden"
           >
-            <div className="relative ">
+            <m.div className="relative max-h-[300px] lg:max-h-[500px] h-screen">
               <Image
                 src={contents[index].img}
                 alt=""
-                className=" max-h-[300px] lg:max-h-[500px] w-auto"
+                className=" h-full w-auto"
               />
-            </div>
-            <div className="flex flex-col gap-1 max-w-[300px]">
+            </m.div>
+            <m.div className="flex flex-col gap-1 max-w-[300px]">
               <p className="text-3xl lg:text-5xl text-primary font-semibold">
                 {contents[index].title}
               </p>
@@ -109,7 +109,7 @@ export default function Home() {
               >
                 Get Started
               </Button>
-            </div>
+            </m.div>
           </m.div>
         </AnimatePresence>
 
@@ -131,7 +131,7 @@ export default function Home() {
           {services.map((service) => {
             return (
               <div className="rounded-xl bg-background/60 shadow-md p-4 flex gap-4 flex-col">
-                <div className="text-xl bg-primary rounded-full p-4 w-fit mx-auto text-white">
+                <div className="text-xl bg-primary rounded-full p-4 w-fit mx-auto text-white shadow-md">
                   {service.icons}
                 </div>
                 <p className="text-2xl font-semibold text-primary">
