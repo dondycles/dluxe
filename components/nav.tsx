@@ -98,14 +98,22 @@ export default function Nav() {
           <AccordionItem hideIndicator key="1" aria-label="Home" title="Home" />
           <AccordionItem key="2" aria-label="About Us" title="About Us">
             <div className="flex flex-col gap-2">
-              <Button key="profile">Company Profile</Button>
-              <Button key="team">Team</Button>
+              <Button key="profile" color="primary" variant="shadow">
+                Company Profile
+              </Button>
+              <Button key="team" color="primary" variant="shadow">
+                Team
+              </Button>
             </div>
           </AccordionItem>
           <AccordionItem key="3" aria-label="Resources" title="Resources">
             <div className="flex flex-col gap-2">
-              <Button key="educ">Educational Resources</Button>
-              <Button key="investment">Investment Sectors</Button>
+              <Button key="educ" color="primary" variant="shadow">
+                Educational Resources
+              </Button>
+              <Button key="investment" color="primary" variant="shadow">
+                Investment Sectors
+              </Button>
             </div>
           </AccordionItem>
           <AccordionItem
