@@ -79,7 +79,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <main className="px-4 sm:px-16 md:px-32 w-full  h-full">
+    <main className="px-4 sm:px-16 md:px-32 w-full h-full ">
       <div className="w-full min-h-full flex flex-col gap-4">
         <AnimatePresence mode="wait">
           <m.div
@@ -87,16 +87,17 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="w-full flex flex-col-reverse lg:flex-row gap-4 justify-center items-center mt-auto mb-0 overflow-hidden"
+            className="w-full flex flex-col-reverse lg:flex-row gap-4 justify-center items-center mt-auto mb-0 overflow-hidden max-w-[1000px] mx-auto"
           >
-            <m.div className="relative max-h-[300px] lg:max-h-[500px] h-screen">
+            <m.div className="relative max-h-[300px] lg:max-h-[500px] w-full h-screen object-cover">
               <Image
                 src={contents[index].img}
                 alt=""
-                className=" h-full w-auto"
+                fill
+                className="object-contain object-bottom"
               />
             </m.div>
-            <m.div className="flex flex-col gap-1 max-w-[300px]">
+            <m.div className="flex flex-col gap-1 max-w-[300px] mb-0 mt-auto flex-1">
               <p className="text-3xl lg:text-5xl text-primary font-semibold">
                 {contents[index].title}
               </p>
@@ -130,7 +131,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((service) => {
             return (
-              <div className="rounded-xl bg-background/60 shadow-md p-4 flex gap-4 flex-col">
+              <div className="rounded-xl shadow-md p-4 flex gap-4 flex-col bg-gradient-to-b hover:from-background hover:to-primary/10 from-background/30 to-background/30 transition-all duration-300">
                 <div className="text-xl bg-primary rounded-full p-4 w-fit mx-auto text-white shadow-md">
                   {service.icons}
                 </div>
