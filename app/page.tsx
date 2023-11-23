@@ -1,7 +1,7 @@
 "use client";
 import slide1 from "@/public/slide1.webp";
 import slide2 from "@/public/slide2.webp";
-import { Button, Divider } from "@nextui-org/react";
+import { Button, Divider, Link } from "@nextui-org/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -79,17 +79,17 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <main className="px-4 sm:px-16 md:px-32 w-full h-full ">
-      <div className="w-full min-h-full flex flex-col gap-4">
+    <main className="w-full h-full ">
+      <div className="w-full min-h-[calc(100%-96px)] flex flex-col gap-4 px-4 sm:px-16 md:px-32 pt-12 ">
         <AnimatePresence mode="wait">
           <m.div
             key={index}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="w-full flex flex-col-reverse lg:flex-row gap-4 justify-center items-center mt-auto mb-0 overflow-hidden max-w-[1000px] mx-auto"
+            className="w-full flex flex-col-reverse lg:flex-row gap-4 justify-center items-center mt-0 mb-0 overflow-hidden max-w-[1000px] mx-auto "
           >
-            <m.div className="relative max-h-[300px] lg:max-h-[500px] w-full h-screen object-cover">
+            <m.div className="relative max-h-[300px] lg:max-h-[500px] w-full h-screen object-cover ">
               <Image
                 src={contents[index].img}
                 alt=""
@@ -127,7 +127,7 @@ export default function Home() {
           })}
         </div>
       </div>
-      <div className="w-full py-12">
+      <div className="w-full py-12 px-4 sm:px-16 md:px-32 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((service) => {
             return (
@@ -144,6 +144,57 @@ export default function Home() {
           })}
         </div>
       </div>
+      <footer className="bg-background/75 py-16 flex flex-col w-full px-4 sm:px-16 md:px-32 gap-8">
+        <div className="grid grid-cols-3 gap-8 w-full max-w-[1000px] mx-auto">
+          <div className="flex flex-col gap-2 justify-center">
+            <p className="text-primary font-semibold text-base border-b-1 border-primary">
+              Navigation
+            </p>
+            <Link underline="hover" href="/" size="sm">
+              Home
+            </Link>
+            <Link underline="hover" href="/" size="sm">
+              About Us
+            </Link>
+            <Link underline="hover" href="/" size="sm">
+              Resources
+            </Link>
+          </div>
+          <div className="flex flex-col gap-2">
+            {" "}
+            <p className="text-primary font-semibold text-base border-b-1 border-primary">
+              Policies
+            </p>
+            <Link underline="hover" href="/" size="sm">
+              AML Policy
+            </Link>
+            <Link underline="hover" href="/" size="sm">
+              Anti Spam Policy
+            </Link>
+            <Link underline="hover" href="/" size="sm">
+              Privacy Policy
+            </Link>
+          </div>
+          <div className="flex flex-col gap-2">
+            {" "}
+            <p className="text-primary font-semibold text-base border-b-1 border-primary">
+              Socials
+            </p>
+            <Link underline="hover" href="/" size="sm">
+              Facebook
+            </Link>
+            <Link underline="hover" href="/" size="sm">
+              Instagram
+            </Link>
+            <Link underline="hover" href="/" size="sm">
+              YouTube
+            </Link>
+          </div>
+        </div>
+        <p className="text-center text-xs">
+          Copyright ©2023 D'LUXE All Rights Reserved.
+        </p>
+      </footer>
     </main>
   );
 }
