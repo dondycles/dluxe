@@ -1,8 +1,9 @@
 "use client";
 import slide1 from "@/public/slide1.webp";
 import slide2 from "@/public/slide2.webp";
+import icon from "@/public/icon.png";
 import demo from "@/public/demo.webp";
-import { Button, Divider, Link } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion as m, AnimatePresence } from "framer-motion";
@@ -71,6 +72,84 @@ export default function Home() {
     },
   ];
 
+  const instruments = [
+    {
+      logo: "EQ",
+      title: "Stocks",
+    },
+    {
+      logo: "ET",
+      title: "ETFs",
+    },
+    {
+      logo: "CM",
+      title: "Commodities",
+    },
+    {
+      logo: "MF",
+      title: "Mutual Funds",
+    },
+    {
+      logo: "FR",
+      title: "Forex",
+    },
+    {
+      logo: "BO",
+      title: "Bonds",
+    },
+    {
+      logo: "CR",
+      title: "Crypto",
+    },
+    {
+      logo: "LO",
+      title: "Listed Options",
+    },
+    {
+      logo: "FU",
+      title: "Futures",
+    },
+  ];
+
+  const themes = [
+    {
+      title: "Privacy",
+      description:
+        "Protocols focused on providing user privacy within the blockchain and application.",
+      icons: "",
+    },
+    {
+      title: "Data",
+      description:
+        "Protocols providing data on chain application via off chain computing or other SaaS service typically provided by cloud provider such as AWS.",
+      icons: "",
+    },
+    {
+      title: "Store of Value",
+      description:
+        "Protocols designed to have strong monetary policies and which provide a secure cryptographic network through which to store value.",
+      icons: "",
+    },
+    {
+      title: "Smart Contract Platforms",
+      description:
+        "Decentralized Blockchains with smart contract functionality upon which applications can be built.",
+      icons: "",
+    },
+    {
+      title: "Payments",
+      description:
+        "Protocols that facilitate decentralized peer to peer transaction on blockchain.",
+      icons: "",
+    },
+    {
+      title: "Metaverse",
+      description:
+        "Games and virtual world integrated with blockchain technology to allow users to own their assets.",
+      icons: "",
+    },
+  ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev === contents.length - 1 ? 0 : prev + 1));
@@ -80,10 +159,10 @@ export default function Home() {
   }, []);
   return (
     <main className="w-full h-full ">
-      <div className="w-full min-h-[calc(100%-96px)] grid grid-rows-3 gap-4 px-4 sm:px-16 md:px-32  ">
+      <header className="w-full min-h-[calc(100%-96px)] grid grid-rows-3 gap-4 px-4 sm:px-16 md:px-32  ">
         <AnimatePresence mode="wait">
           <m.div
-            key={index}
+            key={contents[index].title}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -95,6 +174,7 @@ export default function Home() {
                 alt=""
                 fill
                 className="object-contain object-bottom"
+                priority
               />
             </m.div>
             <m.div className="flex flex-col gap-1 max-w-[300px] mb-0 mt-auto flex-1 mx-auto">
@@ -116,7 +196,10 @@ export default function Home() {
         <div className="bg-background/60 max-w-[600px] mx-auto mb-auto mt-0 h-fit w-full flex flex-row gap-4 rounded-xl shadow-md p-4">
           {projecteds.map((projected) => {
             return (
-              <div className="flex flex-col gap-2 flex-1">
+              <div
+                key={projected.description}
+                className="flex flex-col gap-2 flex-1"
+              >
                 <p className="text-primary font-semibold text-2xl">
                   {projected.amount}
                 </p>
@@ -125,12 +208,15 @@ export default function Home() {
             );
           })}
         </div>
-      </div>
+      </header>
       <div className="w-full py-12 px-4 sm:px-16 md:px-32 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((service) => {
             return (
-              <div className="rounded-xl shadow-md p-4 flex gap-4 flex-col bg-gradient-to-b hover:from-background hover:to-primary/10 from-background/30 to-background/30 transition-all duration-300">
+              <div
+                key={service.title}
+                className="rounded-xl shadow-md p-4 flex gap-4 flex-col bg-gradient-to-b hover:from-background hover:to-primary/10 from-background/30 to-background/30 "
+              >
                 <div className="text-xl bg-primary rounded-full p-4 w-fit mx-auto text-white shadow-md">
                   {service.icons}
                 </div>
@@ -157,124 +243,70 @@ export default function Home() {
               Portfolio
             </p>
             <div className="grid sm:grid-cols-3 gap-2">
-              <Button
-                radius="full"
-                className="text-xs  font-semibold text-white justify-start"
-                variant="shadow"
-                color="primary"
-                startContent={
-                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
-                    EQ
-                  </div>
-                }
-              >
-                Stocks
-              </Button>
-              <Button
-                radius="full"
-                className="text-xs  font-semibold text-white justify-start"
-                variant="shadow"
-                color="primary"
-                startContent={
-                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
-                    ET
-                  </div>
-                }
-              >
-                ETFs
-              </Button>
-              <Button
-                radius="full"
-                className="text-xs  font-semibold text-white justify-start "
-                variant="shadow"
-                color="primary"
-                startContent={
-                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
-                    CM
-                  </div>
-                }
-              >
-                Commodities
-              </Button>
-              <Button
-                radius="full"
-                className="text-xs  font-semibold text-white justify-start"
-                variant="shadow"
-                color="primary"
-                startContent={
-                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
-                    MF
-                  </div>
-                }
-              >
-                Mutual Funds
-              </Button>
-              <Button
-                radius="full"
-                className="text-xs  font-semibold text-white justify-start"
-                variant="shadow"
-                color="primary"
-                startContent={
-                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
-                    FR
-                  </div>
-                }
-              >
-                Forex
-              </Button>
-              <Button
-                radius="full"
-                className="text-xs  font-semibold text-white justify-start"
-                variant="shadow"
-                color="primary"
-                startContent={
-                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
-                    BO
-                  </div>
-                }
-              >
-                Bond
-              </Button>
-              <Button
-                radius="full"
-                className="text-xs  font-semibold text-white justify-start"
-                variant="shadow"
-                color="primary"
-                startContent={
-                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
-                    CR
-                  </div>
-                }
-              >
-                Crypto
-              </Button>
-              <Button
-                radius="full"
-                className="text-xs  font-semibold text-white justify-start"
-                variant="shadow"
-                color="primary"
-                startContent={
-                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
-                    LO
-                  </div>
-                }
-              >
-                Listed Options
-              </Button>
-              <Button
-                radius="full"
-                className="text-xs  font-semibold text-white justify-start"
-                variant="shadow"
-                color="primary"
-                startContent={
-                  <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
-                    FU
-                  </div>
-                }
-              >
-                Futures
-              </Button>
+              {instruments.map((ins) => {
+                return (
+                  <Button
+                    key={ins.title}
+                    radius="full"
+                    className="text-xs  font-semibold text-white justify-start"
+                    variant="shadow"
+                    color="primary"
+                    startContent={
+                      <div className="aspect-square bg-white rounded-full h-[calc(100%-8px)] text-primary flex items-center justify-center font-bold text-base">
+                        {ins.logo}
+                      </div>
+                    }
+                  >
+                    {ins.title}
+                  </Button>
+                );
+              })}
             </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div className="flex flex-col gap-4">
+          <p className="text-3xl sm:text-5xl font-semibold text-primary text-center">
+            Single Asset Product Theme
+          </p>
+          <div className="grid sm:grid-cols-3 sm:grid-rows-3 gap-4 sm:grid-flow-col">
+            <>
+              {themes.slice(0, 3).map((theme) => {
+                return (
+                  <div
+                    key={theme.title}
+                    className="m-auto p-4 rounded-xl bg-gradient-to-b hover:from-background hover:to-primary/10 from-background/30 to-background/30  shadow-md flex flex-col gap-4 self-stretch h-full w-full"
+                  >
+                    <p className="text-2xl font-semibold text-primary mx-auto text-center w-full">
+                      {theme.title}
+                    </p>
+                    <p>{theme.description}</p>
+                  </div>
+                );
+              })}
+            </>
+            <div className=" sm:row-span-3 my-auto max-w-[300px] mx-auto">
+              <Image src={icon} alt="D'LUXE" />
+            </div>
+            <>
+              {themes.slice(3, 6).map((theme) => {
+                return (
+                  <div
+                    key={theme.title}
+                    className="m-auto p-4 rounded-xl bg-gradient-to-b hover:from-background hover:to-primary/10 from-background/30 to-background/30  shadow-md flex flex-col gap-4 h-full  w-full"
+                  >
+                    <p className="text-2xl font-semibold text-primary mx-auto text-center w-full">
+                      {theme.title}
+                    </p>
+                    <p>{theme.description}</p>
+                  </div>
+                );
+              })}
+            </>
           </div>
         </div>
       </div>
